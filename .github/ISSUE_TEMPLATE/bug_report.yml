@@ -1,0 +1,61 @@
+name: 🐛 Bug Report
+description: Report something broken
+title: "[BUG] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a bug!
+        
+        **Note:** For real-time help, try [@Vpscript_bot](https://t.me/Vpscript_bot) (free AI debugger) — paste your log and get instant analysis.
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: A clear description of the bug
+      placeholder: "When I run install.sh, it..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect?
+      placeholder: "It should..."
+    validations:
+      required: true
+
+  - type: input
+    id: app-version
+    attributes:
+      label: mhrv-rs app version
+      placeholder: "v1.9.33"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: os
+    attributes:
+      label: Operating System
+      options:
+        - Android
+        - Windows
+        - macOS
+        - Linux
+    validations:
+      required: true
+
+  - type: input
+    id: vps
+    attributes:
+      label: VPS provider (if applicable)
+      placeholder: "Netlen, Contabo, OVH, etc."
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs
+      description: Paste relevant logs. **Remove your AUTH key and Deployment ID first!**
+      render: shell

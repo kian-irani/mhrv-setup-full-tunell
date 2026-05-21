@@ -1,140 +1,232 @@
 <div align="center">
 
-# 🛡️ mhrv-rs راهنمای فارسی — Full Tunnel Setup
+# 🛡️ mhrv-rs Setup Guide
 
-**راهنمای کامل راه‌اندازی اینترنت آزاد با روش mhrv-rs + VPS Tunnel**
+### Interactive setup guide for Full Tunnel anti-censorship VPN on Android
 
-[![GitHub Pages](https://img.shields.io/badge/صفحه%20تعاملی-آنلاین-brightgreen?style=for-the-badge&logo=github)](https://kian-irani.github.io/mhrv-setup-full-tunell/)
-[![Guide](https://img.shields.io/badge/راهنمای%20تصویری-8%20مرحله-blue?style=for-the-badge&logo=gitbook)](https://kian-irani.github.io/mhrv-setup-full-tunell/guide.html)
-[![Telegram](https://img.shields.io/badge/کانال%20آموزشی-Telegram-26A5E4?style=for-the-badge&logo=telegram)](https://t.me/kian_irani_cdn_f)
-[![Bot](https://img.shields.io/badge/ربات%20اسکریپت-دریافت%20رایگان-green?style=for-the-badge&logo=telegram)](https://t.me/Mhrv_script_bot)
-[![App](https://img.shields.io/badge/mhrv--rs-v1.9.7-orange?style=for-the-badge&logo=android)](https://github.com/therealaleph/MasterHttpRelayVPN-RUST/releases/latest)
+**🇮🇷 [راهنمای فارسی پایین‌تر صفحه](#راهنمای-فارسی)** — Persian guide below
+
+[![Interactive Page](https://img.shields.io/badge/Live%20Site-Open%20in%20Browser-3fb950?style=for-the-badge&logo=github)](https://kian-irani.github.io/mhrv-setup-full-tunell/)
+[![Visual Guide](https://img.shields.io/badge/Visual%20Guide-8%20Steps-58a6ff?style=for-the-badge&logo=gitbook)](https://kian-irani.github.io/mhrv-setup-full-tunell/guide.html)
+[![PC/iPhone](https://img.shields.io/badge/PC%20%26%20iPhone-Guide-8957e5?style=for-the-badge&logo=apple)](https://kian-irani.github.io/mhrv-setup-full-tunell/pc-ios.html)
+[![Telegram Channel](https://img.shields.io/badge/Telegram-Channel-26A5E4?style=for-the-badge&logo=telegram)](https://t.me/kian_irani_cdn_f)
+[![Bot](https://img.shields.io/badge/Script%20Bot-Free-3fb950?style=for-the-badge&logo=telegram)](https://t.me/Mhrv_script_bot)
+[![Debug Bot](https://img.shields.io/badge/AI%20Debug%20Bot-Free-e3b341?style=for-the-badge&logo=telegram)](https://t.me/Vpscript_bot)
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Stars](https://img.shields.io/github/stars/KIAN-IRANI/mhrv-setup-full-tunell?style=social)](https://github.com/KIAN-IRANI/mhrv-setup-full-tunell/stargazers)
+[![Forks](https://img.shields.io/github/forks/KIAN-IRANI/mhrv-setup-full-tunell?style=social)](https://github.com/KIAN-IRANI/mhrv-setup-full-tunell/network/members)
 
 ---
 
-**🇮🇷 این راهنما توسط [Kian Irani](https://github.com/KIAN-IRANi) تهیه شده**  
-با تشکر از [@therealaleph](https://github.com/therealaleph) (Rust Port) و [@masterking32](https://github.com/masterking32) (ایده اصلی)
+**Free, root-less, undetectable VPN routed through Google's edge servers.**
 
 </div>
 
 ---
 
-## ⚡ چی هست؟
+## ⚡ What is this?
 
-یه روش **رایگان** و **بدون نیاز به root** برای دور زدن DPI و فیلترینگ روی اندروید.
+A complete setup toolkit for **[mhrv-rs](https://github.com/therealaleph/MasterHttpRelayVPN-RUST)** — an anti-censorship VPN that tunnels your Android traffic through **Google Apps Script** to a tunnel node on your VPS.
 
-ترافیک گوشی از طریق **Google Edge** رد میشه — ISP فقط اتصال به `www.google.com` می‌بینه و قادر به تشخیص یا فیلتر کردن نیست.
+**Your ISP only sees a TLS connection to `www.google.com`** — no DPI fingerprint, no protocol detection, no easy way to filter.
+
+### How it works
 
 ```
-📱 گوشی شما
-    ↓  TLS — SNI: www.google.com  ← ISP فقط این رو می‌بینه
-☁️ Google Edge  (فیلتر نمیشه)
+📱 Your phone
+    ↓  TLS — SNI: www.google.com  ← ISP only sees this
+☁️  Google Edge  (cannot be filtered)
     ↓
-📝 Apps Script  (جیمیل شما — رایگان)
+📝 Apps Script  (your Gmail — free)
     ↓
-🖥️ Tunnel Node  (VPS)
+🖥️  Tunnel Node  (your VPS)
     ↓
-🌍 اینترنت آزاد
+🌍 Free internet
 ```
 
 ---
 
-## ✅ مزایا
+## ✨ Features
 
-| ویژگی | وضعیت |
-|---|---|
-| 🆓 کاملاً رایگان | ✅ Google Apps Script رایگانه |
-| 🔓 بدون Root | ✅ نیازی به روت نیست |
-| 📜 بدون Certificate | ✅ از v1.7.7+ |
-| 📱 همه اپ‌ها | ✅ Full Tunnel — تلگرام، یوتیوب، بانک |
-| 🔄 Multi-Deployment | ✅ چند جیمیل = سرعت بیشتر |
-| 📤 اشتراک QR | ✅ کانفیگ رو با QR به دیگران بده |
+- 🆓 **100% free** — uses your own Google account quota (20k requests/day)
+- 🔓 **No root needed** — works on any Android 7+
+- 🛡️ **True Full Tunnel** — no MITM certificates needed (since v1.9.28)
+- ⚡ **Self-hosted** — your data only goes through Google → your VPS → internet
+- 🔄 **Auto-updates** — pinned versions with auto-rollback on failure
+- 🌐 **Cross-platform** — Android, Windows, macOS, Linux supported
 
 ---
 
-## 🚀 شروع سریع
+## 🚀 Quick Start
 
-### روش ۱ — بدون VPS (فقط جیمیل)
+### 1. Get a script (free, ~30 seconds)
 
-> اسکریپت آماده رو از ربات بگیر، روی جیمیل deploy کن، تمومه!
+Choose one of two methods:
 
-```
-1. از ربات @Mhrv_script_bot اسکریپت بگیر
-2. روی script.google.com deploy کن
-3. Deployment ID رو به اپ mhrv-rs بده
-4. Connect!
-```
+**Easiest:** Use the [Telegram bot](https://t.me/Mhrv_script_bot) → click "Get Script" → done.
 
-👉 **[دریافت اسکریپت از ربات](https://t.me/Mhrv_script_bot)**
+**Or:** Use this [interactive page](https://kian-irani.github.io/mhrv-setup-full-tunell/) → enter your VPS info → copy generated script.
 
-### روش ۲ — با VPS (Full Tunnel کامل)
+### 2. Deploy on Google Apps Script
 
-> برای تلگرام و اپ‌هایی که TCP خام نیاز دارن
+1. Open [script.google.com](https://script.google.com), create new project
+2. Paste the script you got in step 1
+3. **Deploy** → New deployment → Web app → Execute as: **Me**, Access: **Anyone**
+4. Copy the **Deployment ID** (starts with `AKfycb...`)
+
+### 3. Install tunnel node on your VPS
+
+One command — auto installs Docker, configures firewall, runs container:
 
 ```bash
-# نصب خودکار tunnel-node روی VPS
-# کد از صفحه تعاملی بگیر — IP و رمز خودکار وارد میشه
+PORT="8080" AUTH="$(openssl rand -hex 16)" SSH_PORT="22" \
+  bash <(curl -fsSL https://raw.githubusercontent.com/KIAN-IRANI/mhrv-setup-full-tunell/main/install.sh)
 ```
 
-👉 **[صفحه تعاملی — کد خودکار بگیر](https://kian-irani.github.io/mhrv-setup-full-tunell/)**
+> ⚠️ **Don't use your name as AUTH!** It must be a random secret (≥16 chars). The interactive page has a 🎲 button to generate one.
+
+### 4. Configure the Android app
+
+Download the [mhrv-rs APK](https://github.com/therealaleph/MasterHttpRelayVPN-RUST/releases/latest) → install → enter:
+
+- **Deployment ID** (from step 2)
+- **AUTH key** (from step 3)
+- Set Mode to **Full Tunnel (no cert)**
+
+Done. Enjoy free internet.
 
 ---
 
-## 📖 راهنماها
+## 📦 What's in this repo
 
-| راهنما | لینک |
-|---|---|
-| 🖥️ صفحه تعاملی کامل (VPS + Apps Script + اندروید) | [باز کن](https://kian-irani.github.io/mhrv-setup-full-tunell/) |
-| 📖 راهنمای تصویری deploy — ۸ مرحله با عکس | [باز کن](https://kian-irani.github.io/mhrv-setup-full-tunell/guide.html) |
-| 📱 دانلود آخرین APK اندروید | [دانلود](https://github.com/therealaleph/MasterHttpRelayVPN-RUST/releases/latest) |
-| 🤖 ربات دریافت اسکریپت (رایگان با دعوت) | [@Mhrv_script_bot](https://t.me/Mhrv_script_bot) |
-| 📌 کانال آموزشی و پشتیبانی | [@kian_irani_cdn_f](https://t.me/kian_irani_cdn_f) |
-
----
-
-## ⚙️ ساختار پروژه
-
-```
-mhrv-setup-full-tunell/
-├── index.html      ← صفحه تعاملی (تنظیمات + کد VPS + Apps Script + آندروید)
-├── guide.html      ← راهنمای تصویری گام‌به‌گام deploy
-└── README.md       ← همین فایل
-```
+| File | Purpose |
+|------|---------|
+| [`index.html`](index.html) | Interactive setup wizard (live at [the GitHub Pages site](https://kian-irani.github.io/mhrv-setup-full-tunell/)) |
+| [`guide.html`](guide.html) | 8-step visual deployment guide |
+| [`pc-ios.html`](pc-ios.html) | PC (Windows/macOS/Linux) & iPhone setup guide |
+| [`install.sh`](install.sh) | One-shot VPS installer (Docker + firewall + tunnel-node) |
+| [`update.sh`](update.sh) | Smart updater with auto-rollback on failure |
+| [`check.sh`](check.sh) | Health check & diagnostics |
+| [`VERSION`](VERSION) | Pinned tunnel-node version (currently `1.9.33`) |
+| [`CodeFull.gs.template`](CodeFull.gs.template) | Apps Script template with `%%AUTH_KEY%%` / `%%TUNNEL_URL%%` placeholders |
 
 ---
 
-## 🔧 محدودیت‌ها
+## 🖥️ System requirements
 
-| مورد | وضعیت |
-|---|---|
-| WebSocket (Discord voice) | ❌ کار نمی‌کنه |
-| YouTube (بدون Full Tunnel) | ⚠️ نیاز به VPS |
-| سهمیه روزانه | ⚠️ 20k call/روز هر اکانت گوگل |
-| تلگرام | 💡 از SOCKS5 Proxy استفاده کن: `127.0.0.1:8086` |
+### Android
+- Android 7+ (lower may work, not tested)
+- ~50 MB free storage
 
----
+### VPS (for Full Tunnel)
+- 1 vCPU
+- 1 GB RAM (2 GB recommended)
+- 10 GB disk
+- Ubuntu 20.04+ or Debian 11+
+- Any provider — but Iran ISPs throttle some IPs (OVH, Hetzner France).
+  **Recommended:** Netlen, Contabo, Hostinger, or anywhere outside throttled ranges.
 
-## 📦 نسخه‌های مهم
-
-| نسخه | تغییرات |
-|---|---|
-| v1.9.7 | LAN share toggle، multi-edge fronting groups |
-| v1.9.4 | long-poll 5s→15s، tunnel-node بهبود |
-| v1.8.5 | Full Tunnel (no cert)، استریم ویدیو fix |
-| v1.7.7 | Export config / QR code، App splitting |
+### Windows/macOS/Linux client
+- mhrv-rs Windows app (SOCKS5 on `127.0.0.1:1081`)
+- For system-wide tunneling: pair with [NekoBox](https://github.com/MatsuriDayo/nekoray/releases) (GUI) or [sing-box](https://github.com/SagerNet/sing-box/releases) (CLI)
 
 ---
 
-## 🙏 تشکر
+## 🆘 Support & Community
 
-- **[@masterking32](https://github.com/masterking32)** — ایده اصلی و پروتکل Python
-- **[@therealaleph](https://github.com/therealaleph)** — پورت Rust و Full Tunnel
-- **[Kian Irani](https://github.com/KIAN-IRANi)** — این راهنما و صفحه تعاملی
+| Resource | Link |
+|----------|------|
+| 📢 Channel (Persian) | [@kian_irani_cdn_f](https://t.me/kian_irani_cdn_f) |
+| 💬 Discussion group | [@kiancdn_group](https://t.me/kiancdn_group) |
+| 🤖 Free script bot | [@Mhrv_script_bot](https://t.me/Mhrv_script_bot) |
+| 🩺 **AI debug bot** | [@Vpscript_bot](https://t.me/Vpscript_bot) — paste your log, get instant analysis |
+| 🆘 Direct support | [@Kian_irani_t](https://t.me/Kian_irani_t) |
+| 🖥 Dedicated VPS setup | [@Kian_irani_vps](https://t.me/Kian_irani_vps) |
+
+---
+
+## 🤝 Contributing
+
+Contributions welcome! Please open an issue first for major changes. See [CONTRIBUTING.md](CONTRIBUTING.md).
+
+For security issues, see [SECURITY.md](SECURITY.md).
+
+---
+
+## 🙏 Credits
+
+This is a **community helper / setup wrapper** for the upstream project:
+
+- **[@therealaleph](https://github.com/therealaleph)** — Rust port + active maintainer of [mhrv-rs](https://github.com/therealaleph/MasterHttpRelayVPN-RUST)
+- **[@masterking32](https://github.com/masterking32)** — original idea
+
+All credit for the actual VPN goes to them. This repo only provides **easier onboarding** for Persian-speaking users.
+
+---
+
+## 📄 License
+
+MIT — see [LICENSE](LICENSE)
 
 ---
 
 <div align="center">
 
-**📌 [کانال آموزشی](https://t.me/kian_irani_cdn_f) | 🤖 [ربات اسکریپت](https://t.me/Mhrv_script_bot) | 🛡️ [صفحه تعاملی](https://kian-irani.github.io/mhrv-setup-full-tunell/)**
+## راهنمای فارسی
+
+</div>
+
+### 🛡️ mhrv-rs — رد فیلتر اختصاصی برای اندروید
+
+ابزار راه‌اندازی برای **[mhrv-rs](https://github.com/therealaleph/MasterHttpRelayVPN-RUST)** — یه VPN ضد سانسور که ترافیک گوشی اندرویدت رو از طریق **Google Apps Script** به یه tunnel-node روی VPS خودت رد می‌کنه.
+
+**ISP فقط یه اتصال TLS به `www.google.com` می‌بینه** — هیچ پترن قابل تشخیصی نیست.
+
+### ⚡ ویژگی‌ها
+
+- 🆓 **کاملاً رایگان** — از سهمیه روزانه گوگل خودت استفاده می‌کنه (۲۰هزار درخواست/روز)
+- 🔓 **بدون نیاز به Root**
+- 🛡️ **Full Tunnel واقعی** — بدون نیاز به نصب گواهی
+- ⚡ **خودمیزبان** — داده فقط از گوگل → VPS تو → اینترنت رد می‌شه
+- 🔄 **آپدیت خودکار** — با rollback خودکار اگه fail بشه
+
+### 🚀 شروع سریع
+
+**۱.** اسکریپت رو از [ربات تلگرام](https://t.me/Mhrv_script_bot) بگیر (رایگان)
+
+**۲.** در [script.google.com](https://script.google.com) deploy کن، Deployment ID رو کپی کن
+
+**۳.** روی VPS:
+```bash
+PORT="8080" AUTH="$(openssl rand -hex 16)" SSH_PORT="22" \
+  bash <(curl -fsSL https://raw.githubusercontent.com/KIAN-IRANI/mhrv-setup-full-tunell/main/install.sh)
+```
+
+**۴.** در اپ اندروید [mhrv-rs](https://github.com/therealaleph/MasterHttpRelayVPN-RUST/releases/latest)، Deployment ID و AUTH رو وارد کن.
+
+### 📖 راهنمای کامل تصویری
+
+به **[صفحه تعاملی](https://kian-irani.github.io/mhrv-setup-full-tunell/)** برو — همه چیز با مراحل تصویری.
+
+### 🩺 مشکل داری؟
+
+ربات اشکال‌زدای ما با هوش مصنوعی لاگ رو تحلیل می‌کنه و راه‌حل می‌ده — **رایگان**:
+**[@Vpscript_bot](https://t.me/Vpscript_bot)**
+
+### 💬 ارتباط با ما
+
+- 📢 کانال: [@kian_irani_cdn_f](https://t.me/kian_irani_cdn_f)
+- 💬 گروه گفتگو: [@kiancdn_group](https://t.me/kiancdn_group)
+- 🆘 پشتیبانی: [@Kian_irani_t](https://t.me/Kian_irani_t)
+- 🖥 سرور اختصاصی: [@Kian_irani_vps](https://t.me/Kian_irani_vps)
+
+---
+
+<div align="center">
+
+**Made with ❤️ for a free internet**
+
+[Star this repo ⭐](https://github.com/KIAN-IRANI/mhrv-setup-full-tunell) if it helped you
 
 </div>
