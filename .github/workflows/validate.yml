@@ -11,7 +11,7 @@ jobs:
     name: 🐚 Shell Script Validation
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       
       - name: Check syntax of all .sh files
         run: |
@@ -30,7 +30,7 @@ jobs:
     name: 🌐 HTML Validation
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       
       - name: Validate HTML files
         run: |
@@ -69,7 +69,7 @@ jobs:
     name: 🔗 Markdown Link Check
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - uses: gaurav-nelson/github-action-markdown-link-check@v1
         with:
           use-quiet-mode: 'yes'
