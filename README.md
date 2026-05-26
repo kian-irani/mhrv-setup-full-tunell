@@ -18,7 +18,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![mhrv-rs Latest](https://img.shields.io/github/v/release/therealaleph/MasterHttpRelayVPN-RUST?style=flat-square&label=mhrv-rs%20app&color=3fb950&logo=android)](https://github.com/therealaleph/MasterHttpRelayVPN-RUST/releases/latest)
-[![Download APK](https://img.shields.io/badge/📥%20Download-APK%20v1.9.34-3fb950?style=flat-square)](https://github.com/therealaleph/MasterHttpRelayVPN-RUST/releases/download/v1.9.34/mhrv-rs-android-universal-v1.9.34.apk)
+[![Download APK](https://img.shields.io/badge/📥%20Download-APK%20v1.9.35-3fb950?style=flat-square)](https://github.com/therealaleph/MasterHttpRelayVPN-RUST/releases/download/v1.9.35/mhrv-rs-android-universal-v1.9.35.apk)
 [![Donate TRC20](https://img.shields.io/badge/Donate-TRON%20TRC20-EF0027?logo=tron)](DONATE.md)
 [![Stars](https://img.shields.io/github/stars/KIAN-IRANI/mhrv-setup-full-tunell?style=social)](https://github.com/KIAN-IRANI/mhrv-setup-full-tunell/stargazers)
 [![Forks](https://img.shields.io/github/forks/KIAN-IRANI/mhrv-setup-full-tunell?style=social)](https://github.com/KIAN-IRANI/mhrv-setup-full-tunell/network/members)

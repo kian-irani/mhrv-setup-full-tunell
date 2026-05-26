@@ -3,6 +3,6 @@
 # هر بار که نسخه جدید رسمی منتشر شد، تست کن، اگه سالم بود اینجا رو آپدیت کن
 # نسخه‌های موجود: https://github.com/therealaleph/MasterHttpRelayVPN-RUST/releases
 
-# فعلی: v1.9.34 — به‌طور خودکار توسط sync-upstream workflow آپدیت می‌شه
-TUNNEL_VERSION=1.9.34
+# فعلی: v1.9.35 — به‌طور خودکار توسط sync-upstream workflow آپدیت می‌شه
+TUNNEL_VERSION=1.9.35
 TEMPLATE_LINES=773

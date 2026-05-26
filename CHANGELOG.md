@@ -27,7 +27,21 @@ The `TUNNEL_VERSION` pin in [`VERSION`](VERSION) tracks the [upstream mhrv-rs re
   - Commits + pushes only if upstream changed
   - Manual trigger available via Actions → workflow_dispatch
 
+---## [1.9.35] — 2026-05-26 (auto-synced from upstream)
+
+### Changed
+- **Synced to mhrv-rs v1.9.35** (was v1.9.34)
+- CodeFull.gs.template updated to match upstream
+- All download links in `index.html` / `pc-ios.html` / README updated
+- VERSION file pin updated to 1.9.35
+
+### Upstream notes
+> ℹ️ CodeFull.gs بدون تغییر نسبت به نسخه قبل — تغییرات این release فقط در اپ Rust (نه Apps Script).
+
+Auto-synced by `.github/workflows/sync-upstream.yml`
+
 ---
+
 ## [1.9.34] — 2026-05-22 (auto-synced from upstream)
 
 ### Changed
